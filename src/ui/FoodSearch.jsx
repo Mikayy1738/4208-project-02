@@ -53,7 +53,7 @@ export default function FoodSearch() {
         <Dropdown.Menu show style={{ width: "100%" }}>
           {results.map((item) => (
             <Dropdown.Item
-              key={item.fdcId}
+              key={item.productId}
               onClick={() => {
                 setQuery(item.description);
                 setShowDropdown(false);

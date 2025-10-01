@@ -6,15 +6,15 @@ export default function NutritionFacts({ food, servingSize = 1, onClose }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (food?.fdcId) {
+    if (food?.productId) {
       loadDetailedNutrition();
     }
-  }, [food?.fdcId]);
+  }, [food?.productId]);
 
   const loadDetailedNutrition = async () => {
     setLoading(true);
     try {
-      const details = await getFoodDetails(food.fdcId);
+      const details = await getFoodDetails(food.productId);
       setDetailedFood(details);
     } catch (error) {
       console.error('Failed to load detailed nutrition:', error);

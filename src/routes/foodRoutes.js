@@ -1,20 +1,21 @@
 import express from "express";
-import { searchFoods, getFoodDetails } from "../services/foodService.js";
+import { searchFoods as searchFoodsOFF, getFoodDetails as getFoodDetailsOFF } from "../services/openFoodFactsService.js";
 
 const router = express.Router();
 
+// OpenFoodFacts routes
 router.get("/:query", async (req, res) => {
   try {
-    const foods = await searchFoods(req.params.query);
+    const foods = await searchFoodsOFF(req.params.query);
     res.json(foods);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
 
-router.get("/details/:fdcId", async (req, res) => {
+router.get("/details/:productId", async (req, res) => {
   try {
-    const food = await getFoodDetails(req.params.fdcId);
+    const food = await getFoodDetailsOFF(req.params.productId);
     res.json(food);
   } catch (err) {
     res.status(500).json({ error: err.message });

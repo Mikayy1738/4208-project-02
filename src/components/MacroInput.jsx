@@ -48,7 +48,7 @@ export default function MacroInput({ onAddMeal }) {
       const multiplier = servingSize / 100;
       
       const macroData = {
-        fdcId: selectedFood.fdcId,
+        productId: selectedFood.productId,
         description: selectedFood.description,
         brandOwner: selectedFood.brandOwner,
         calories: (selectedFood.calories || 0) * multiplier,
@@ -97,7 +97,7 @@ export default function MacroInput({ onAddMeal }) {
           <div className="dropdown-menu show" style={{display: 'block', width: '100%'}}>
             {results.map((food) => (
               <div
-                key={food.fdcId}
+                key={food.productId}
                 className="dropdown-item"
                 onClick={() => handleFoodSelect(food)}
               >

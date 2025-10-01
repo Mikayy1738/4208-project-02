@@ -17,7 +17,7 @@ export default function ExerciseMenu() {
         </div>
       </div>
       <div className="container">
-        <h2></h2>
+        <ExerciseTracker />
       </div>
     </div>
   );

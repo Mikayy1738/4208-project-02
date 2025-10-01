@@ -7,19 +7,19 @@ import {
   getNutritionUnit,
 } from "../services/foodAPI.js";
 
-export default function FoodDetails({ fdcId }) {
+export default function FoodDetails({ productId }) {
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!fdcId) return;
+    if (!productId) return;
 
     const fetchDetails = async () => {
       setLoading(true);
       setError(null);
       try {
-        const data = await getFoodDetails(fdcId);
+        const data = await getFoodDetails(productId);
         setDetails(data);
       } catch (err) {
         console.error(err);
@@ -30,14 +30,14 @@ export default function FoodDetails({ fdcId }) {
     };
 
     fetchDetails();
-  }, [fdcId]);
+  }, [productId]);
 
-  if (!fdcId) return <p>Select a food to see details.</p>;
+  if (!productId) return <p>Select a food to see details.</p>;
   if (loading) return <Spinner animation="border" />;
   if (error) return <p>{error}</p>;
   if (!details) return null;
 
-  // USDA returns nutrients in an array → we map to your label/unit helpers
+  // OpenFoodFacts returns nutrients in an array → we map to your label/unit helpers
   return (
     <div style={{ marginTop: "1rem" }}>
       <h4>{details.description}</h4>

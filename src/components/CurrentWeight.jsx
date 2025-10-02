@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getEntries } from '../services/weightService';
+import { getEntries } from '../services/weightService.js';
 
 export default function CurrentWeight() {
   const [range, setRange] = useState(30);

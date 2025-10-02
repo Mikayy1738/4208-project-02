@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getExercises } from "../services/exerciseService";
+import { getExercises } from "../services/exerciseService.js";
 
 export default function ExerciseTracker() {
   const [search, setSearch] = useState("");

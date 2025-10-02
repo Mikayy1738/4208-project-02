@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getFoodDetails, formatNutritionValue, getNutritionLabel, getNutritionUnit } from '../services/foodAPI';
+import { getFoodDetails, formatNutritionValue, getNutritionLabel, getNutritionUnit } from '../services/foodAPI.js';
 
 export default function NutritionFacts({ food, servingSize = 1, onClose }) {
   const [detailedFood, setDetailedFood] = useState(null);

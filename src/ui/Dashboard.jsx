@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import WeightChart from "../components/WeightChart";
-import CaloriesChart from "../components/CaloriesChart";
-import MacroSplitChart from "../components/MacroSplitChart";
-import MyNavbar from "../components/NavBar";
-import CurrentWeight from "../components/CurrentWeight";
+import WeightChart from "../components/WeightChart.jsx";
+import CaloriesChart from "../components/CaloriesChart.jsx";
+import MacroSplitChart from "../components/MacroSplitChart.jsx";
+import MyNavbar from "../components/NavBar.jsx";
+import CurrentWeight from "../components/CurrentWeight.jsx";
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("weight");

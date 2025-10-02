@@ -1,7 +1,7 @@
 import React from "react";
-import MyNavbar from "../components/NavBar";
-import ExerciseTracker from "../components/ExerciseTracker";
-import MyCalendar from "../components/Calender";
+import MyNavbar from "../components/NavBar.jsx";
+import ExerciseTracker from "../components/ExerciseTracker.jsx";
+import MyCalendar from "../components/Calender.jsx";
 
 export default function ExerciseMenu() {
   return (

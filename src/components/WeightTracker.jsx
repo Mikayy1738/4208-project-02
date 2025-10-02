@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addEntry } from '../services/weightService';
+import { addEntry } from '../services/weightService.js';
 
 export default function WeightTracker() {
   const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10));

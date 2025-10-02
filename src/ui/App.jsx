@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
-import Dashboard from "./Dashboard";
-import MacroMenu from "./MacroMenu";
-import WeightMenu from "./WeightMenu";
-import ExerciseMenu from "./ExerciseMenu";
+import Dashboard from "./Dashboard.jsx";
+import MacroMenu from "./MacroMenu.jsx";
+import WeightMenu from "./WeightMenu.jsx";
+import ExerciseMenu from "./ExerciseMenu.jsx";
 
 
 function Login({ onLogin }) {

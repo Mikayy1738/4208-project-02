@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import MacroProgress from './MacroProgress';
-import MacroInput from './MacroInput';
-import MealLog from './MealLog';
+import MacroProgress from './MacroProgress.jsx';
+import MacroInput from './MacroInput.jsx';
+import MealLog from './MealLog.jsx';
 
 export default function MacroTracker() {
   const [dailyMacros, setDailyMacros] = useState({

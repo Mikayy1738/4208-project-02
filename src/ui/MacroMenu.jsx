@@ -1,8 +1,8 @@
 import React from "react";
-import MacroTracker from "../components/MacroTracker";
-import MyNavbar from "../components/NavBar";
-import CsvImport from "../components/DataImport";
-import CaloriesChart from "../components/CaloriesChart";
+import MacroTracker from "../components/MacroTracker.jsx";
+import MyNavbar from "../components/NavBar.jsx";
+import CsvImport from "../components/DataImport.jsx";
+import CaloriesChart from "../components/CaloriesChart.jsx";
 
 export default function MacroMenu() {
 

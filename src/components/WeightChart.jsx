@@ -9,7 +9,7 @@ import {
   Tooltip,
   Legend
 } from "chart.js";
-import { getEntries } from "../services/weightService";
+import { getEntries } from "../services/weightService.js";
 
 Chart.register(
   LineController,

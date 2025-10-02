@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { searchFood, formatNutritionValue, getNutritionUnit } from '../services/foodAPI.js';
-import NutritionFacts from './NutritionFacts';
+import NutritionFacts from './NutritionFacts.jsx';
 
 export default function MacroInput({ onAddMeal }) {
   const [query, setQuery] = useState('');

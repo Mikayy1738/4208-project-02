@@ -1,9 +1,9 @@
 import React from "react";
-import MyNavbar from "../components/NavBar";
-import CsvImport from "../components/DataImport";
-import WeightTracker from "../components/WeightTracker";
-import WeightChart from "../components/WeightChart";
-import CurrentWeight from "../components/CurrentWeight";
+import MyNavbar from "../components/NavBar.jsx";
+import CsvImport from "../components/DataImport.jsx";
+import WeightTracker from "../components/WeightTracker.jsx";
+import WeightChart from "../components/WeightChart.jsx";
+import CurrentWeight from "../components/CurrentWeight.jsx";
 
 export default function WeightMenu() {
 

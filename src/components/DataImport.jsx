@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { addEntry, clearEntries } from "../services/weightService";
+import { addEntry, clearEntries } from "../services/weightService.js";
 
 export default function CsvImport({ mode = "both" }) {
   const [csvData, setCsvData] = useState([]);

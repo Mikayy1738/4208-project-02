@@ -1,5 +1,6 @@
 {
   "name": "4208-project-02",
+  "homepage": "https://yourusername.github.io/4208-project-02",
   "version": "1.0.0",
   "description": "BodyIQ",
   "main": "src/index.jsx",
@@ -10,7 +11,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@openfoodfacts/openfoodfacts-nodejs": "^2.0.0-alpha.19",
@@ -39,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

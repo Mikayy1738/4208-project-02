@@ -13,7 +13,7 @@ BodyIQ is an all in one fitness tracking application. It tracks users weight, ma
 <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/9a47559e-0162-4907-930a-b773cdb135c8" />
 
 **Live Demo / Install & Run**
-- https://mikayy1738.github.io/login
+- https://mikayy1738.github.io/4208-project-02/#/login
 - If downloaded nagivate to the project directory and run `npm start`  
 
 **How It Works**

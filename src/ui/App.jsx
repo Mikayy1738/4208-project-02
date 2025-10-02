@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import Dashboard from "./Dashboard.jsx";
 import MacroMenu from "./MacroMenu.jsx";
 import WeightMenu from "./WeightMenu.jsx";
@@ -84,7 +84,7 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/login" element={<Login onLogin={() => { setIsLoggedIn(true); localStorage.setItem("isLoggedIn", "true"); }} />} />
         <Route path="/dashboard" element={(isLoggedIn || localStorage.getItem("isLoggedIn") === "true") ? <Dashboard /> : <Navigate to="/login" replace />} />
@@ -93,6 +93,6 @@ export default function App() {
         <Route path="/exercise" element={(isLoggedIn || localStorage.getItem("isLoggedIn") === "true") ? <ExerciseMenu /> : <Navigate to="/login" replace />} />
         <Route path="*" element={<Navigate to={(isLoggedIn || localStorage.getItem("isLoggedIn") === "true") ? "/dashboard" : "/login"} replace />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }

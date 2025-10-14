@@ -4,12 +4,16 @@ import Dashboard from "./Dashboard.jsx";
 import MacroMenu from "./MacroMenu.jsx";
 import WeightMenu from "./WeightMenu.jsx";
 import ExerciseMenu from "./ExerciseMenu.jsx";
+import Workout from "../components/Workout.jsx";
+import Profile from "./Profile.jsx";
+import Settings from "./Settings.jsx";
 
 
 function Login({ onLogin }) {
   const [message, setMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const PROFILE_KEY = "userProfile";
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,6 +23,11 @@ function Login({ onLogin }) {
     const validEmail = "demo@example.com";
     const validPassword = "password123";
     if (email === validEmail && password === validPassword) {
+      try {
+        const existing = JSON.parse(localStorage.getItem(PROFILE_KEY) || "null") || {};
+        const updated = { ...existing, email };
+        localStorage.setItem(PROFILE_KEY, JSON.stringify(updated));
+      } catch (_) {}
       onLogin();
       navigate("/dashboard", { replace: true });
     } else {
@@ -90,7 +99,10 @@ export default function App() {
         <Route path="/dashboard" element={(isLoggedIn || localStorage.getItem("isLoggedIn") === "true") ? <Dashboard /> : <Navigate to="/login" replace />} />
         <Route path="/macro-menu" element={(isLoggedIn || localStorage.getItem("isLoggedIn") === "true") ? <MacroMenu /> : <Navigate to="/login" replace />} />
         <Route path="/weight" element={(isLoggedIn || localStorage.getItem("isLoggedIn") === "true") ? <WeightMenu /> : <Navigate to="/login" replace />} />
-        <Route path="/exercise" element={(isLoggedIn || localStorage.getItem("isLoggedIn") === "true") ? <ExerciseMenu /> : <Navigate to="/login" replace />} />
+        <Route path="/exercise" element={(isLoggedIn || localStorage.getItem("isLoggedIn") === "true") ? <Workout /> : <Navigate to="/login" replace />} />
+        <Route path="/exercise-history" element={(isLoggedIn || localStorage.getItem("isLoggedIn") === "true") ? <ExerciseMenu /> : <Navigate to="/login" replace />} />
+        <Route path="/profile" element={(isLoggedIn || localStorage.getItem("isLoggedIn") === "true") ? <Profile /> : <Navigate to="/login" replace />} />
+        <Route path="/settings" element={(isLoggedIn || localStorage.getItem("isLoggedIn") === "true") ? <Settings /> : <Navigate to="/login" replace />} />
         <Route path="*" element={<Navigate to={(isLoggedIn || localStorage.getItem("isLoggedIn") === "true") ? "/dashboard" : "/login"} replace />} />
       </Routes>
     </Router>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function MyNavbar() {
@@ -14,7 +14,10 @@ export default function MyNavbar() {
             <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
             <Nav.Link onClick={() => navigate('/macro-menu')}>Macros</Nav.Link>
             <Nav.Link onClick={() => navigate('/weight')}>Weight</Nav.Link>
-            <Nav.Link onClick={() => navigate('/exercise')}>Exercise</Nav.Link>
+            <NavDropdown title="Exercise" id="exercise-dropdown">
+              <NavDropdown.Item onClick={() => navigate('/exercise')}>Exercise</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => navigate('/exercise-history')}>Exercise History</NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
             <Nav.Link as={Link} to="/settings">Settings</Nav.Link>
             <Nav.Link onClick={() => navigate('/login')}>Logout</Nav.Link>

@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-function MyCalendar() {
-  const [date, setDate] = useState(new Date());
+function MyCalendar({ value, onChange }) {
+  const [internalDate, setInternalDate] = useState(new Date());
+  const date = value ?? internalDate;
+  const handleChange = onChange ?? setInternalDate;
 
   return (
     <div className="calendar-container">
@@ -12,7 +14,7 @@ function MyCalendar() {
       </div>
       <div className="calendar-wrapper">
         <Calendar
-          onChange={setDate}
+          onChange={handleChange}
           value={date}
         />
       </div>
